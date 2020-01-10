@@ -61,6 +61,11 @@ public class InputInfoManager : MonoBehaviour
         { 
             SceneManager.LoadScene("MainScene");    //フリップシーンへ
         }
+        else
+        {
+            Debug.Log("else文");
+            GameObject.Find("Canvas").transform.Find("SettingPanel").gameObject.SetActive(true);
+        }
     }
 
 }

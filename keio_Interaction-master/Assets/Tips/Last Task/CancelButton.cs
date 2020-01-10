@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SettingPanel : MonoBehaviour
+public class CancelButton : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public void Loading()
     {
-        GameObject.Find("SettingPanel").SetActive(false);
-        GameObject.Find("SettingPanel").GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+        GameObject.Find("SettingPanel").gameObject.SetActive(false);
     }
 
     // Update is called once per frame
