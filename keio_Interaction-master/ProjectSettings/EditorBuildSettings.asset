@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tips/RotateWithCompass/TestRotateWithCompass.unity
     guid: a9f747e72ddea4cdebb39e010b41a785
+  - enabled: 1
+    path: Assets/Tips/Last Task/TitleScene.unity
+    guid: cca40e1220711be4f825b06ee3e3c37a
+  - enabled: 1
+    path: Assets/Tips/Last Task/MainScene.unity
+    guid: 194985242f330724685580efea490176
+  - enabled: 1
+    path: Assets/Tips/Last Task/InputInfo.unity
+    guid: a823311d9b65bd142b40a5a542c26a25
   m_configObjects: {}

@@ -17,13 +17,13 @@ public class TestScenario : MonoBehaviour {
     IEnumerator ScenarioMain()
     {
         yield return WaitMessage(
-            "知っているか？\n" +
-            "サザエさんのじゃんけんに「必勝法」があることを！！\n\n");
+            "あなたの筋トレの目的を教えてください\n" +
+            "目的に合わせて目標値を設定します\n\n");
 
         yield return WaitSelect(
-            "知りたい！", 
-            "そんなものはない！", 
-            "オレ知ってる！"
+            "ムキムキになりたい", 
+            "ダイエット", 
+            "健康管理"
             );
 
         switch (selectCtrl.Result)

@@ -9,7 +9,7 @@ public class MessageController2 : MonoBehaviour
     // 表示するメッセージ
     public string Message;
     // 1文字の表示時間
-    public float timeCharDisplay = 0.1f;
+    public float timeCharDisplay = 0.0f;
 
     // 表示区切りの文字コード
     const char SPLIT_CODE = '\n';
