@@ -8,12 +8,15 @@ using System.Linq;
 
 public class InputInfoManager : MonoBehaviour
 {
-    //入力フォーム
+    //入力フォーム(文字列)
     public InputField age, weight, height;
     //トグルの値の取得
     public ToggleGroup toggleGroup;
     //Dropdownの値の取得
     public Dropdown dropdownComponent;
+    //消費カロリー　（外部からアクセスするためstaticで宣言して値を返す）
+    public static int calorie;
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,14 +61,29 @@ public class InputInfoManager : MonoBehaviour
 
         Debug.Log("selected " + selectedLabel);
         if (CheckType(age.text) && CheckType(weight.text) && CheckType(height.text)) 
-        { 
+        {
+            //男性：13.397×体重kg＋4.799×身長cm−5.677×年齢+88.362
+            //女性：9.247×体重kg＋3.098×身長cm−4.33×年齢+447.593
+            //ここに運動強度を掛け合わせる
+            if (selectedLabel == "男")
+            {
+                calorie = (int)(13.397 * int.Parse(weight.text) + 4.799 * int.Parse(height.text) - 5.677 * int.Parse(age.text) + 88.362);
+            }
+            else
+            {
+                calorie = (int)(9.247 * int.Parse(weight.text) + 3.098 * int.Parse(height.text) - 4.33 * int.Parse(age.text) + 447.593);
+            }
+
             SceneManager.LoadScene("MainScene");    //フリップシーンへ
         }
         else
         {
-            Debug.Log("else文");
             GameObject.Find("Canvas").transform.Find("SettingPanel").gameObject.SetActive(true);
         }
     }
 
+    public static int getCalorie()
+    {
+        return calorie;
+    }
 }
