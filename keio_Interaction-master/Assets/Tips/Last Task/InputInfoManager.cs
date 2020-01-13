@@ -15,7 +15,7 @@ public class InputInfoManager : MonoBehaviour
     //Dropdownの値の取得
     public Dropdown dropdownComponent;
     //消費カロリー　（外部からアクセスするためstaticで宣言して値を返す）
-    public static int calorie;
+    public static double calorie;
 
 
     // Start is called before the first frame update
@@ -67,11 +67,11 @@ public class InputInfoManager : MonoBehaviour
             //ここに運動強度を掛け合わせる
             if (selectedLabel == "男")
             {
-                calorie = (int)(13.397 * int.Parse(weight.text) + 4.799 * int.Parse(height.text) - 5.677 * int.Parse(age.text) + 88.362);
+                calorie = 13.3 * double.Parse(weight.text) + 4.8 * double.Parse(height.text) - 5.7 * double.Parse(age.text) + 88.4;
             }
             else
             {
-                calorie = (int)(9.247 * int.Parse(weight.text) + 3.098 * int.Parse(height.text) - 4.33 * int.Parse(age.text) + 447.593);
+                calorie = 9.2 * double.Parse(weight.text) + 3.1 * double.Parse(height.text) - 4.3 * double.Parse(age.text) + 447.6;
             }
 
             SceneManager.LoadScene("MainScene");    //フリップシーンへ
@@ -82,8 +82,13 @@ public class InputInfoManager : MonoBehaviour
         }
     }
 
-    public static int getCalorie()
+    public static double getCalorie()
     {
         return calorie;
+    }
+
+    public static void updateCalorie(double newCalorie)
+    {
+        calorie = newCalorie;
     }
 }

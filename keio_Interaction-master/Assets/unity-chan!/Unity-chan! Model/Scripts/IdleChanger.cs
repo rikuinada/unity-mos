@@ -52,7 +52,7 @@ namespace UnityChan
 				anim.SetBool ("Back", true);
 			}
 		
-			// "Next"フラグがtrueの時の処理
+			//"Next"フラグがtrueの時の処理
 			if (anim.GetBool ("Next")) {
 				// 現在のステートをチェックし、ステート名が違っていたらブーリアンをfalseに戻す
 				currentState = anim.GetCurrentAnimatorStateInfo (0);
@@ -73,21 +73,21 @@ namespace UnityChan
 			}
 		}
 
-		void OnGUI ()
+		/*void OnGUI ()
 		{
 			GUI.Box (new Rect (Screen.width - 110, 10, 100, 90), "Change Motion");
 			if (GUI.Button (new Rect (Screen.width - 100, 40, 80, 20), "Next"))
 				anim.SetBool ("Next", true);
 			if (GUI.Button (new Rect (Screen.width - 100, 70, 80, 20), "Back"))
 				anim.SetBool ("Back", true);
-		}
+		}*/
 
 
 		// ランダム判定用関数
 		IEnumerator RandomChange ()
 		{
 			// 無限ループ開始
-			while (true) {
+			while (false) {
 				//ランダム判定スイッチオンの場合
 				if (_random) {
 					// ランダムシードを取り出し、その大きさによってフラグ設定をする

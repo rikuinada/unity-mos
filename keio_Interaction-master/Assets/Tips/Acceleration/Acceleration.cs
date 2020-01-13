@@ -37,10 +37,13 @@ public class Acceleration : MonoBehaviour {
 
     private void OnGUI ()
     {
+        GUI.skin.textField.fontSize = 100; //フォントサイズ変更
+        GUI.color = Color.white; //ファントカラー変更
+
         Vector3 dir = Input.acceleration;
-        GUI.TextField (new Rect (10, 10, 100, 100), "X = " + dir.x.ToString ());
-        GUI.TextField (new Rect (10, 30, 100, 100), "Y = " + dir.y.ToString ());
-        GUI.TextField (new Rect (10, 50, 100, 100), "Z = " + dir.z.ToString ());
+        GUI.TextField (new Rect (10, 10, 500, 200), "X = " + dir.x.ToString ());
+        GUI.TextField (new Rect (10, 210, 500, 200), "Y = " + dir.y.ToString ());
+        GUI.TextField (new Rect (10, 410, 500, 200), "Z = " + dir.z.ToString ());
     }
 
     void DrawLines ()
